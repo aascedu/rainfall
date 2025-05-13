@@ -1,5 +1,22 @@
 As always, we decompiled the binary.
+```c
+void run(void)
 
+{
+  fwrite("Good... Wait what?\n",1,0x13,stdout);
+  system("/bin/sh");
+  return;
+}
+
+void main(void)
+
+{
+  char local_50 [76];
+
+  gets(local_50);
+  return;
+}
+```
 We can see a main function with a buffer (76 char long) and a gets function (which is unsafe for buffer overflow).
 
 Already a hint.
