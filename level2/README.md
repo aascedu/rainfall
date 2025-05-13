@@ -41,7 +41,7 @@ To find those address we can do in gdb :
 for ret address of p() : disas p and look at the address of the instruction ret.
 for the string "/bin/sh", we can find it inside libc :
 
-`info proc mappings` then find the start address and the end address and then :
+`info proc mappings` then find the start address and the end address of libc and then this command will find the string if it is inside the binary :
 
 `find start_addr, end_addr, "/bin/sh"`
 
