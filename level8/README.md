@@ -8,7 +8,7 @@ char *auth = NULL;
 char *service = NULL;
 
 int main(void) {
-    char input[128];
+    char input[5];
     char temp[2];
     char buffer[125];
 
