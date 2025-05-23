@@ -3,7 +3,13 @@
 This project serves as an introduction to exploiting ELF-like binaries through a series of progressively challenging levels.
 
 ## How to run the project
-You need to download the .iso 
+You need to download the [rainfall .iso](https://cdn.intra.42.fr/isos/RainFall.iso) and then run it.
+In order to connect with `ssh` or copy file to your host machine with `scp`, you need to add a bridged network to the VM so that it can communicate with the host.
+
+For VirtualBox :
+1. Go to the VM Settings -> Network
+2. Enable Network Adapter
+3. Choose Bridged Adapter
 
 ## Table of Contents
 
