@@ -30,3 +30,7 @@ scp -P 4242 level0@<ip address>:~/level0 ./level0
 - [Level 7](./level7/)
 - [Level 8](./level8/)
 - [Level 9](./level9/)
+
+## Collaborators
+- [Basile JEANNOT](https://github.com/fan2bolide)
+- [Arthur ASCEDU](https://github.com/aascedu)
