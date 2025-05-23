@@ -1,9 +1,9 @@
 # Rainfall
 
-This project serves as an introduction to exploiting ELF-like binaries through a series of progressively challenging levels.
+This project serves as an introduction to exploiting ELF-like binaries through a series of progressively challenging levels. The **goal** of this project is to gain understanding of why small bad practices can lead to vulnerabilities in your code.
 
 ## How to run the project
-You need to download the [rainfall .iso](https://cdn.intra.42.fr/isos/RainFall.iso) and then run it.
+You need to download the [rainfall .iso](https://cdn.intra.42.fr/isos/RainFall.iso) and then run it.  
 In order to connect with `ssh` or copy file to your host machine with `scp`, you need to add a bridged network to the VM so that it can communicate with the host.
 
 For VirtualBox :
